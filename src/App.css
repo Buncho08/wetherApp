@@ -1,0 +1,121 @@
+* {
+  text-align: center;
+  color: rgb(27, 26, 26);
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  background: url(images/mingo.png);
+  height: 100%;
+  position: relative;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* #root::before {
+  background: inherit;
+  content: '';
+  position: absolute;
+  filter: blur(5px); */
+/* ↓ここないと適用されない */
+/* top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  z-index: -1;
+} */
+
+.relative {
+  position: relative;
+}
+
+.App {
+  position: absolute;
+  width: 60%;
+  height: 400px;
+  top: 200px;
+  left: 20%;
+  border-radius: 20px;
+}
+
+.img {
+  position: relative;
+  z-index: 0;
+}
+
+.img::before {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.385);
+  content: '';
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  backdrop-filter: blur(10px);
+  z-index: -1;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.title {
+  padding-top: 140px;
+  color: rgb(27, 26, 26);
+  letter-spacing: 10px;
+  /* background-color: blue; */
+}
+
+.afterForm {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.form {
+  margin-top: 1rem;
+}
+
+input {
+  /* width: 120%; */
+  height: 40px;
+  margin-bottom: 1rem;
+  border: 1px solid white;
+}
+
+.submit {
+  width: 100px;
+  height: 30px;
+  border: 1px rgb(91, 85, 85) solid;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+@keyframes hover-ani {
+  0% {
+    color: black;
+    background-color: rgb(255, 255, 255);
+  }
+
+  100% {
+    color: aliceblue;
+    background-color: palevioletred;
+  }
+}
+
+.submit:hover {
+  color: aliceblue;
+  background-color: palevioletred;
+  animation: 0.3s hover-ani forwards;
+}
