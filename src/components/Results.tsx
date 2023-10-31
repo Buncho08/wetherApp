@@ -7,24 +7,32 @@ type ResultsStateType = {
         icon: string;
     }
 }
-const Results = (props: ResultsStateType) => {
+const Results = ({ results }: ResultsStateType) => {
+    const {
+        country,
+        cityName,
+        temperature,
+        conditionText,
+        icon
+    } = results;
+
     return (
         <div>
-            {props.results.country &&
+            {country &&
                 <div>
                     <p>
-                        {props.results.cityName}
+                        {cityName}
                     </p>
                     <p>
-                        {props.results.country}
+                        {country}
                     </p>
                     <p>
-                        {props.results.conditionText}
+                        {conditionText}
                     </p>
                     <p>
-                        {props.results.temperature}
+                        {temperature}
                     </p>
-                    <img src={props.results.icon} />
+                    <img src={icon} />
                 </div>}
         </div>
     );

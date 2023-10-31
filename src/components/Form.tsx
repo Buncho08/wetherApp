@@ -6,22 +6,23 @@ type FormPropsType = {
 
 // 渡されたprops↑
 
-const Form = (props: FormPropsType) => {
+const Form = ({ setCity, getWeather, flgs }: FormPropsType) => {
     // ここにあったAPIはApp.tsxに行きました
-    let flg: number = 1; if (props.flgs) {
+    let flg: number = 1;
+    if (flgs) {
         flg = 0;
     }
-    if (props.flgs !== "") {
+    if (flgs !== "") {
         flg = 0;
     }
 
     if (flg) {
         return (
             <div className="form">
-                <form onSubmit={props.getWeather}>
+                <form onSubmit={getWeather}>
                     {/* 入力するとリアルタイムで入る
                 {city} */}
-                    <input type="text" name="city" placeholder="" onChange={e => props.setCity(e.target.value)} />
+                    <input type="text" name="city" placeholder="" onChange={e => setCity(e.target.value)} />
                     {/* onchangeハンドラ、イベントが発火したらsetCityに値を渡す */}
                     {/* e.target.value で入力された値が取り出せる -> 自動的にStringに変換される*/}
                     {/* setCity -> cityというわたり方 */}

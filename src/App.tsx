@@ -38,10 +38,13 @@ function App() {
           icon: data.current.condition.icon
         })
       })
-    // json形式で受け取ります
-    // .thenでresを受け取っている、アローでそのまま次の処理に値を渡している
-    // これはresultsに渡ります
+      // json形式で受け取ります
+      // .thenでresを受け取っている、アローでそのまま次の処理に値を渡している
+      // これはresultsに渡ります
+      .catch(err => alert("エラー！"))
   }
+
+  console.log(results.country);
   return (
     <div className="relative content">
 
